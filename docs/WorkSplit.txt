@@ -1,0 +1,7 @@
+UI Design: Login Page(Shijie Xu); Admin Page(Shijie Xu); Non-admin Page(Xiang Ao); Stock Page(Xiang Ao)
+
+Method Implements: Shijie: Non-Admin Creating, deleting, renaming, quit 
+
+		   Xiang: Admin creating, deleting, apply, cancel
+			
+		   Collaborate: Album Type,User Type,Search Function,Store(Serialization)

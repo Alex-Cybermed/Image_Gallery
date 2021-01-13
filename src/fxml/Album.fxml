@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photos.view.AlbumController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Label layoutX="520.0" layoutY="41.0" text="thumbnail List" />
+            <Label fx:id="albumTitle" layoutX="250.0" layoutY="-3.0" text="Album 001">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="quitButton" layoutX="582.0" layoutY="333.0" mnemonicParsing="false" onAction="#quit" text="Quit" />
+            <ListView fx:id="thumbnailList" layoutX="472.0" layoutY="65.0" prefHeight="257.0" prefWidth="159.0" />
+            <Button fx:id="applyChangeButton" layoutX="422.0" layoutY="333.0" mnemonicParsing="false" onAction="#applyChange" text="APPLY" />
+            <Button fx:id="cancelChangeButton" layoutX="487.0" layoutY="333.0" mnemonicParsing="false" onAction="#cancelButton" text="CANCEL" />
+            <ImageView fx:id="captionArea" fitHeight="169.0" fitWidth="444.0" layoutX="27.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="144.0" />
+            <Label fx:id="caption" layoutX="31.0" layoutY="32.0" text="Caption" />
+            <Button fx:id="lastPhotoButton" layoutX="391.0" layoutY="242.0" mnemonicParsing="false" onAction="#lastPhoto" text="&lt;&lt;" />
+            <Button fx:id="nextPhotoButton" layoutX="434.0" layoutY="242.0" mnemonicParsing="false" onAction="#nextPhoto" text="&gt;&gt;" />
+            <TextField fx:id="renameField" layoutX="28.0" layoutY="27.0" />
+            <AnchorPane fx:id="editAnchor" layoutY="-2.0" prefHeight="134.0" prefWidth="373.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0">
+                     <children>
+                        <ChoiceBox fx:id="choiceTag1" layoutX="27.0" layoutY="1.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="choiceTag2" layoutX="27.0" layoutY="34.0" prefHeight="28.0" prefWidth="150.0" />
+                        <TextField fx:id="fillTag1" layoutX="27.0" layoutY="74.0" prefHeight="27.0" prefWidth="150.0" />
+                        <TextField fx:id="fillTag2" layoutX="27.0" layoutY="107.0" prefHeight="27.0" prefWidth="150.0" />
+                        <TextField fx:id="choiceField1" layoutX="209.0" layoutY="1.0" prefHeight="27.0" prefWidth="150.0" />
+                        <TextField fx:id="choiceField2" layoutX="209.0" layoutY="35.0" prefHeight="27.0" prefWidth="150.0" />
+                        <TextField fx:id="fillField1" layoutX="209.0" layoutY="74.0" prefHeight="27.0" prefWidth="150.0" />
+                        <TextField fx:id="fillField2" layoutX="209.0" layoutY="107.0" prefHeight="27.0" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+            <AnchorPane fx:id="displayAnchor" layoutX="9.0" layoutY="235.0" prefHeight="134.0" prefWidth="373.0">
+               <children>
+                  <Label layoutX="3.0" layoutY="3.0" text="Date of Photo:" />
+                  <Label fx:id="date" layoutX="103.0" layoutY="3.0" text="" />
+                  <Label layoutX="3.0" layoutY="20.0" text="TAGs:" />
+                  <Label fx:id="tag1" layoutX="48.0" layoutY="20.0" text="" />
+                  <Label fx:id="field1" layoutX="85.0" layoutY="21.0" text="" />
+                  <Label fx:id="tag2" layoutX="199.0" layoutY="21.0" text="" />
+                  <Label fx:id="field2" layoutX="242.0" layoutY="21.0" text="" />
+                  <Button fx:id="addPhotoButton" layoutX="-1.0" layoutY="57.0" mnemonicParsing="false" onAction="#addPhoto" text="ADD" />
+                  <Button fx:id="renameButton" layoutX="47.0" layoutY="57.0" mnemonicParsing="false" onAction="#renamePhoto" text="RECAPTION" />
+                  <Button fx:id="removePhotoButton" layoutX="144.0" layoutY="57.0" mnemonicParsing="false" onAction="#removePhoto" text="REMOVE" />
+                  <Button fx:id="copyPhotoButton" layoutX="222.0" layoutY="57.0" mnemonicParsing="false" onAction="#copyPhoto" text="COPY TO" />
+                  <Button fx:id="moveToButton" layoutX="310.0" layoutY="57.0" mnemonicParsing="false" onAction="#moveTo" text="MOVE TO" />
+                  <Button fx:id="addTagButton" layoutX="50.0" layoutY="92.0" mnemonicParsing="false" onAction="#addTag" text="ADD TAGS" />
+                  <Button fx:id="deleteTagButton" layoutX="197.0" layoutY="92.0" mnemonicParsing="false" onAction="#deleteTag" text="DELETE TAGS" />
+                  <Label fx:id="warningMsg" layoutX="11.0" layoutY="119.0" text="Warning: Click &quot;APPLY&quot; to confirm Delete" />
+                  <Label fx:id="renameWarningMsg" layoutX="11.0" layoutY="119.0" text="Warning: Click &quot;APPLY&quot; to confirm Rename" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="copyMove" layoutX="27.0" layoutY="239.0" prefHeight="43.0" prefWidth="352.0">
+               <children>
+                  <ChoiceBox fx:id="copyMoveUser" layoutX="14.0" layoutY="8.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="copyMoveAlbum" layoutX="188.0" layoutY="8.0" prefWidth="150.0" />
+               </children>
+            </AnchorPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

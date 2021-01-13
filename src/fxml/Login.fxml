@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photos.view.Login">
+   <children>
+      <Label layoutX="118.0" layoutY="168.0" text="Username:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="username" layoutX="234.0" layoutY="168.0" />
+      <Button fx:id="login" layoutX="417.0" layoutY="168.0" mnemonicParsing="false" onAction="#loginButtonAction" text="Login" />
+      <Button fx:id="quit" layoutX="278.0" layoutY="321.0" mnemonicParsing="false" onAction="#quitButtonAction" text="Quit" />
+      <Label layoutX="174.0" layoutY="72.0" text="Welcome to Photo Library!">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorLabel" layoutX="76.0" layoutY="223.0" text="Error: Username doesn't exist, Please try again!" visible="false">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

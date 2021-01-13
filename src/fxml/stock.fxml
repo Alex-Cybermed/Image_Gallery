@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photos.view.stockController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Label layoutX="478.0" layoutY="40.0" text="Album List" />
+            <Button fx:id="createAlbumButton" layoutX="19.0" layoutY="320.0" mnemonicParsing="false" onAction="#createAlbum" text="CREATE" />
+            <Label fx:id="welcomeLable" layoutX="183.0" layoutY="6.0" text="Welcome! Stock">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="quitButton" layoutX="582.0" layoutY="333.0" mnemonicParsing="false" onAction="#quit" text="Quit" />
+            <ListView fx:id="albumNameList" layoutX="422.0" layoutY="65.0" onMouseClicked="#click" prefHeight="257.0" prefWidth="200.0" />
+            <Label layoutX="43.0" layoutY="214.0" text="Number of Photos">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="43.0" layoutY="160.0" text="Created Date:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="43.0" layoutY="105.0" text="Album name:">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="albumNameField" layoutX="183.0" layoutY="105.0" prefHeight="26.0" prefWidth="215.0" text="" textFill="#898989">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="albumDateField" layoutX="184.0" layoutY="160.0" prefHeight="26.0" prefWidth="215.0" text="" textFill="#898989">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="photoNumberField" layoutX="229.0" layoutY="214.0" prefHeight="26.0" prefWidth="60.0" text="" textFill="#898989">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="deleteAlbumButton" layoutX="175.0" layoutY="320.0" mnemonicParsing="false" onAction="#deleteAlbum" text="DELETE" />
+            <Button fx:id="applyButton" layoutX="251.0" layoutY="320.0" mnemonicParsing="false" onAction="#applyChange" text="APPLY" />
+            <Button fx:id="cancelButton" layoutX="320.0" layoutY="320.0" mnemonicParsing="false" onAction="#cancelChange" text="CANCEL" />
+            <Button fx:id="renameAlbumButton" layoutX="95.0" layoutY="320.0" mnemonicParsing="false" onAction="#renameAlbum" text="RENAME" />
+            <Button fx:id="searchButton" layoutX="422.0" layoutY="333.0" mnemonicParsing="false" onAction="#search" text="SEARCH" />
+            <TextField fx:id="inputAlbumNameField" layoutX="183.0" layoutY="105.0" prefHeight="27.0" prefWidth="215.0" />
+            <Label fx:id="warningMsg" layoutX="21.0" layoutY="301.0" text="WARNING: CLICK &quot;APPLY&quot; TO CONFIRM DELETE" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
